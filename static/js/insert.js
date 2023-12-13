@@ -3,7 +3,7 @@ function insert(email, nombre, telefono) {
     const token = urlParams.get('token');
     sessionStorage.setItem('token', token);
 
-    const URL = "http://localhost:8000/contactos";
+    const URL = "https://nueva-api-344c8029d97b.herokuapp.com/contactos";
     const datos = {
         email: email,
         nombre: nombre,
@@ -43,17 +43,17 @@ function insert(email, nombre, telefono) {
                     return response.json();
                 })
                 .then(data => {
-                    window.location.href = "http://localhost:8080/templates/todos.html?token=" + token;
+                    window.location.href = "https://nueva-api-344c8029d97b.herokuapp.com/templates/todos.html?token=" + token;
                 })
                 .catch(error => {
                     alert("Error al insertar los datos");
-                    window.location.href = "http://localhost:8080/templates/index.html";
+                    window.location.href = "https://nueva-api-344c8029d97b.herokuapp.com/templates/index.html";
                 });
             }
         })
         .catch(error => {
             alert("Error al verificar el email");
-            window.location.href = "http://localhost:8080/templates/index.html";
+            window.location.href = "https://nueva-api-344c8029d97b.herokuapp.com/templates/index.html";
         });
     } else {
         console.log('No se encontró un token.');
