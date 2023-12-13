@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Contactos</title>
+        <script type="text/javascript" src="../static/js/get_all.js"></script>
+        <link rel="stylesheet" href="../static/css/global.css">
+    </head>
+    <body>
+        <a href="buscar.html" id="url">Buscar</a>
+        <a href="insertar.html" id="url2">Insertar</a>
+        <table border="1" id="table_contactos">
+            <thead id="thead_contactos">
+                <th><h5>Email</h5></th>
+                <th><h5>Nombre</h5></th>
+                <th><h5>Telefono</h5></th>
+                <th colspan="3">Opciones</th>
+            </thead>
+            <tbody id="tbody_contactos">
+            </tbody>
+        </table>
+        <script>
+            const urlParams = new URLSearchParams(window.location.search);
+            const token = urlParams.get('token');
+            url = document.getElementById("url")
+            url2 = document.getElementById("url2")
+            url.href = "buscar.html?token=" + token;
+            url2.href = "insertar.html?token=" + token;
+            document.body.onload = getAll();
+        </script>
+    </body>
+</html>
