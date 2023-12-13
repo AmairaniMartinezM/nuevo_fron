@@ -4,8 +4,8 @@ function borrar_data(email){
     sessionStorage.setItem('token', token);
 
     var email = urlParams.get('email');
-    const url = "http://localhost:8000/contactos";
-    //const URL = "https://nueva-api-344c8029d97b.herokuapp.com/contactos"
+    //const url = "http://localhost:8000/contactos";
+    const URL = "https://nueva-api-344c8029d97b.herokuapp.com/contactos"
     if (token){
         fetch(url, {
             method: 'GET',
@@ -51,7 +51,7 @@ function borrar_data(email){
       })
       .catch(error => {
         alert("No autorizado");
-        //window.location.href = "http://localhost:8080/templates/index.html";
+        //window.location.href = "https://nueva-api-344c8029d97b.herokuapp.com/templates/index.html";
       });
     } else {
       console.log('No se encontró un token.');
