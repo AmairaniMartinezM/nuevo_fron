@@ -6,7 +6,7 @@ function borrar(email){
         console.log(email)
         console.log(token)
         var requestToken = new XMLHttpRequest();
-        requestToken.open('GET', 'http://localhost:8000/contactos/' + email);
+        requestToken.open('GET', 'https://nueva-api-344c8029d97b.herokuapp.com/contactos/' + email);
         requestToken.setRequestHeader('Authorization', 'Bearer ' + token);
         requestToken.send();
 
@@ -14,14 +14,14 @@ function borrar(email){
             if (requestToken.status === 200) {
                 console.log('token válido')
                 var request = new XMLHttpRequest();
-                request.open('DELETE', "http://localhost:8000/contactos/" + email);
+                request.open('DELETE', "https://nueva-api-344c8029d97b.herokuapp.com/contactos/" + email);
                 request.setRequestHeader('Authorization', 'Bearer ' + token);
                 request.send();
                 alert('Contacto borrado correctamente')
-                window.location.href = 'http://localhost:8080/templates/todos.html?token=' + token;
+                window.location.href = 'https://nueva-api-344c8029d97b.herokuapp.com/templates/todos.html?token=' + token;
             }else{
                 alert('Token inválido, inicia sesión de nuevo')
-                window.location.href = 'http://localhost:8080/login';
+                window.location.href = 'https://nueva-api-344c8029d97b.herokuapp.com/login';
             }
         }
     }
