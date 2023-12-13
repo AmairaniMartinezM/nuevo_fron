@@ -1,5 +1,5 @@
 function login(username, passwd){
-    endpoint = "https://nueva-api-344c8029d97b.herokuapp.com/contactos"
+    endpoint = "https://nueva-api-344c8029d97b.herokuapp.com"
     const token = `${username}:${passwd}`;
     const tokenBase64 = btoa(token);
     fetch(endpoint, {
