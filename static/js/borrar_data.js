@@ -5,7 +5,7 @@ function borrar_data(email){
 
     var email = urlParams.get('email');
     const url = "http://localhost:8000/contactos";
-    //const URL = "https://heroku-python-3act-62ad9044fdb9.herokuapp.com/contactos"
+    //const URL = "https://nueva-api-344c8029d97b.herokuapp.com/contactos"
     if (token){
         fetch(url, {
             method: 'GET',
