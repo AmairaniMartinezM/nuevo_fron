@@ -7,7 +7,7 @@ function editar(email, nombre, telefono) {
     console.log(telefono);
     if (confirm("Actualizar contacto?")) {
         var request = new XMLHttpRequest();
-        request.open('PUT', "http://localhost:8000/contactos/" + email);
+        request.open('PUT', "https://nueva-api-344c8029d97b.herokuapp.com/contactos" + email);
         request.setRequestHeader('Authorization', 'Bearer ' + token);
         request.setRequestHeader("Content-Type", "application/json");
 
@@ -21,7 +21,7 @@ function editar(email, nombre, telefono) {
 
         request.onload = (e) => {
             alert("Contacto actualizado exitosamente");
-            window.location.href = 'http://localhost:8080/templates/todos.html?token=' + token;
+            window.location.href = 'https://nueva-api-344c8029d97b.herokuapp.com/templates/todos.html?token=' + token;
         };
     }
 }
